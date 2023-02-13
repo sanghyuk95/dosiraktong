@@ -33,6 +33,15 @@ body {
   word-break: keep-all;
 }
 /* 기본세팅 끝 */
+/* 공통요소 */
+.inner {
+  position: relative;
+  display: block;
+  /* 반응형 위해서 */
+  max-width: 1420px;
+  width: 100%;
+  margin: 0 auto;
+}
 
 /* 레이아웃 */
 .wrap {
@@ -41,13 +50,64 @@ body {
 }
 /* 헤더 */
 .header {
-  position: relative;
+  position: fixed;
+  left: 0;
+  top: 0;
   display: block;
+  width: 100%;
+  height: 100px;
+  z-index: 9999;
+  background-color: rgba(255, 255, 255, 0);
+  transition: height 0.5s, background 0.5s;
 }
+.header .inner {
+  max-width: 100%;
+  height: 100%;
+}
+.logo {
+  position: absolute;
+  top: 35px;
+  left: 60px;
+  display: inline-block;
+  width: 125px;
+  height: 30px;
+  background: url("../images/logo_white.png") no-repeat center;
+  background-size: cover;
+  transition: top 0.5s, background 0.5s;
+}
+/* 스크롤시 css적용 */
+.header.active {
+  background-color: rgba(255, 255, 255, 1);
+  height: 80px;
+}
+.header.active .logo {
+  background: url("../images/logo.png") no-repeat center;
+  background-size: cover;
+  top: 25px;
+}
+.nav {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+}
+.gnb {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.gnb li {
+  margin: 0 20px;
+}
+
 /* 비주얼 */
 .visual {
   position: relative;
   display: block;
+  width: 100%;
+  height: 100vh;
+  background: url("../images/main_visual_1.jpg") no-repeat center;
+  background-size: cover;
 }
 /* 서비스 */
 .service {
