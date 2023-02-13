@@ -1,0 +1,71 @@
+@charset "utf-8";
+/* 위에꺼는 무조건 1번줄 */
+/* 글꼴 임포트 */
+@import url("./font/font.css");
+/* 기본세팅 */
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+}
+html {
+  font-size: 16px;
+}
+body {
+  font-family: "Poppins", "Pretendard", sans-serif;
+  overflow-y: scroll;
+  color: #222;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0;
+  word-break: keep-all;
+}
+/* 기본세팅 끝 */
+
+/* 레이아웃 */
+.wrap {
+  position: relative;
+  display: block;
+}
+/* 헤더 */
+.header {
+  position: relative;
+  display: block;
+}
+/* 비주얼 */
+.visual {
+  position: relative;
+  display: block;
+}
+/* 서비스 */
+.service {
+  position: relative;
+  display: block;
+}
+/* 정보 */
+.info {
+  position: relative;
+  display: block;
+}
+/* 서비스 카테고리 */
+.categori {
+  position: relative;
+  display: block;
+}
+/* 푸터 */
+.footer {
+  position: relative;
+  display: block;
+}
