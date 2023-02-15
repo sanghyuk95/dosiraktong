@@ -29,6 +29,13 @@
     <!-- swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <!-- css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
     <!-- js -->
@@ -114,7 +121,8 @@
           swiper : 클래스는 Swiper 기본형 제어 css
           사용자지정클래스(swvisual) : js 및 css 추가
           -->
-        <div class="swiper Swvisual">
+        <div class="swiper swvisual">
+          <!-- swiper-wrapper,swiper-slide 클래스명,css 변경금지 -->
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="visual-img bg-1"></div>
@@ -127,6 +135,30 @@
             </div>
             <div class="swiper-slide">
               <div class="visual-img bg-4"></div>
+            </div>
+          </div>
+          <!-- 슬라이드 콘트롤러 -->
+          <div class="swvisual-control">
+            <div class="inner">
+              <button class="swvisual-prev">
+                <i class="fa-solid fa-angle-left"></i>
+              </button>
+              <button class="swvisual-next">
+                <i class="fa-solid fa-angle-right"></i>
+              </button>
+              <h2 class="swvisual-title">도시락유심</h2>
+              <p class="swvisual-txt">어ㅈ쩌구</p>
+              <div class="swvisual-link">
+                <a href="#">
+                  자세히보기
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+              <div class="swvisual-navi">
+                <ul class="swvisual-list">
+                  <!-- 자바스크립트 연동 html삽입-->
+                </ul>
+              </div>
             </div>
           </div>
         </div>
