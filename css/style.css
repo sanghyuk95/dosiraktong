@@ -45,6 +45,7 @@ html.active {
   width: 100%;
   /* block 요소 가운데 정렬 */
   margin: 0 auto;
+  padding: 0 30px;
 }
 
 /* 레이아웃 */
@@ -430,28 +431,242 @@ html.active {
 .swvisual-list li.active {
   color: rgba(255, 255, 255, 1);
 }
-
 .swvisual-list li.active::after {
   width: 100%;
   transition: width 2s;
 }
+/* 비주얼 반응형 */
+@media screen and (max-width: 1280px) {
+  /* 비주얼 안쪽의 내용 사이즈 조절 */
+}
+
+@media screen and (max-width: 1024px) {
+  .visual {
+    min-height: 800px;
+    height: 48.95vw;
+  }
+  /* 비주얼 안쪽의 내용 사이즈 조절 */
+}
+@media screen and (max-width: 640px) {
+  /* 비주얼 안쪽의 내용 사이즈 조절 */
+}
+
 /* 서비스 */
 .service {
   position: relative;
   display: block;
+  height: auto;
 }
+.service .inner {
+  height: 100%;
+  padding: 180px 30px;
+}
+.service h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 38px;
+  /* 글자셋팅 */
+}
+.service h2 span {
+  color: #3a68b2;
+}
+@media (max-width: 1280) {
+  .service h2 {
+    font-size: 34px;
+  }
+}
+@media (max-width: 1024px) {
+  .service h2 {
+    font-size: 30px;
+  }
+}
+.service-content {
+  display: flex;
+  justify-content: space-between;
+  height: 680px;
+}
+.service-content a {
+  width: 100%;
+  display: block;
+}
+.service-left {
+  width: calc(50% - 10px);
+  height: 100%;
+  transition: all 0.5s;
+}
+.service-right {
+  width: calc(50% - 10px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.service-right a {
+  height: calc(50% - 10px);
+}
+.service-link1 {
+  background: url("../images/main_service_img1.jpg") no-repeat center;
+  background-size: cover;
+  height: 100%;
+}
+.service-link2 {
+  height: 100%;
+  background: url("../images/main_service_img2.jpg") no-repeat center;
+  background-size: cover;
+}
+.service-link3 {
+  height: 100%;
+  background: url("../images/main_service_img3.jpg") no-repeat center;
+  background-size: cover;
+}
+
+@media screen and (max-width: 1440px) {
+  .service-content {
+    height: 47.22vw;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .service-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    height: auto;
+  }
+  .service-left {
+    display: block;
+    width: 100%;
+    max-width: 680px;
+    height: 580px;
+    margin-bottom: 20px;
+  }
+  .service-right {
+    display: block;
+    width: 100%;
+    height: 580px;
+    max-width: 680px;
+  }
+  .service-link2 {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .service-left {
+    height: 220px;
+  }
+  .service-right {
+    height: 460px;
+  }
+  .service-link2 {
+    height: 220px;
+  }
+  .service-link3 {
+    height: 220px;
+  }
+}
+
 /* 정보 */
 .info {
   position: relative;
   display: block;
 }
+.info .inner {
+  padding: 0px 30px 180px;
+}
+.info-contents {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 430px;
+  background-color: palevioletred;
+}
+.info-left {
+  width: calc(50% - 10px);
+  height: 100%;
+  background-color: yellow;
+}
+.info-right {
+  width: calc(50% - 10px);
+  height: 100%;
+  background-color: yellowgreen;
+}
+@media (max-width: 1280px) {
+  .info-contents {
+    height: 383px;
+  }
+}
+@media (max-width: 1024px) {
+  .info-contents {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+  .info-left {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .info-right {
+    width: 100%;
+  }
+}
 /* 서비스 카테고리 */
 .category {
   position: relative;
   display: block;
+  height: 400px;
+}
+.swcategory {
+  height: 100%;
+}
+.category-link {
+  position: relative;
+  display: block;
+  background-color: yellowgreen;
+  width: 100%;
+  height: 100%;
+}
+.clink1 {
+  background-color: violet;
+}
+.clink2 {
+  background-color: turquoise;
+}
+.clink3 {
+  background-color: blue;
+}
+@media (max-width: 480px) {
+  .category {
+    height: 300px;
+  }
+}
+.category-pop {
+  display: none;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 99;
+}
+.category-pop.active {
+  display: none !important;
+}
+@media (max-width: 1024px) {
+  .category-pop {
+    display: flex;
+  }
 }
 /* 하단 */
 .footer {
   position: relative;
   display: block;
+  padding: 40px 0;
+  text-align: center;
+  background-color: #222;
+  color: #666;
+  height: 250px;
+  width: 100%;
 }
