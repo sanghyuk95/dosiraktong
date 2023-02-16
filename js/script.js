@@ -3,6 +3,23 @@ window.onload = function () {
   // AOS셋팅
   AOS.init();
 
+  //waypoint
+  let goTop = document.querySelector(".gotop");
+  let service = document.querySelector(".service");
+  new Waypoint({
+    element: service,
+    handler: (dir) => {
+      console.log(dir);
+      if (dir === "down") {
+        goTop.classList.add("active");
+      } else {
+        goTop.classList.remove("active");
+      }
+    },
+    // 해당div가 화면상에 얼마나 보이는가
+    offset: "50%",
+  });
+
   let htmlTag = document.querySelector("html");
   let mbBt = document.querySelector(".mb-bt");
   let mbNav = document.querySelector(".mb-nav");
