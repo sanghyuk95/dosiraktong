@@ -23,6 +23,19 @@ img {
 html {
   font-size: 16px;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+p,
+label,
+a {
+  line-height: 1.5em;
+  word-break: keep-all;
+}
 body {
   font-family: "Poppins", "Pretendard", sans-serif;
   color: #222;
@@ -59,6 +72,15 @@ html.active {
 }
 .gotop.active {
   opacity: 1;
+}
+.gotop.active2 {
+  bottom: 350px;
+}
+@media (max-width: 640) {
+  .gotop {
+    right: 20px;
+    bottom: 20px;
+  }
 }
 
 /* 공통요소 : 2번이상 재활용 코드 */
@@ -237,6 +259,7 @@ html.active {
 .header.active {
   height: 80px;
   background: rgba(255, 255, 255, 1);
+  box-shadow: 10px 0 15px 0 rgb(0 0 0 / 10%);
 }
 .logo.active {
   top: 25px;
@@ -458,22 +481,58 @@ html.active {
 }
 .swvisual-list li.active::after {
   width: 100%;
-  transition: width 2s;
+  transition: width 3s;
 }
 /* 비주얼 반응형 */
 @media screen and (max-width: 1280px) {
-  /* 비주얼 안쪽의 내용 사이즈 조절 */
+  .swvisual-title {
+    font-size: 50px;
+  }
+  .swvisual-txt {
+    font-size: 20px;
+  }
+  .swvisual-prev {
+    width: 50px;
+    height: 50px;
+  }
+  .swvisual-next {
+    width: 50px;
+    height: 50px;
+  }
+  .swvisual-control button i {
+    font-size: 25px;
+  }
 }
-
 @media screen and (max-width: 1024px) {
   .visual {
     min-height: 800px;
     height: 48.95vw;
   }
-  /* 비주얼 안쪽의 내용 사이즈 조절 */
+  .swvisual-title {
+    font-size: 42px;
+  }
+  .swvisual-txt {
+    font-size: 17px;
+  }
 }
 @media screen and (max-width: 640px) {
-  /* 비주얼 안쪽의 내용 사이즈 조절 */
+  .swvisual-title {
+    font-size: 36px;
+  }
+  .swvisual-prev {
+    width: 40px;
+    height: 40px;
+  }
+  .swvisual-next {
+    width: 40px;
+    height: 40px;
+  }
+  .swvisual-control button i {
+    font-size: 20px;
+  }
+  .swvisual-list li {
+    width: 50px;
+  }
 }
 
 /* 서비스 */
@@ -513,6 +572,12 @@ html.active {
 .service-content a {
   width: 100%;
   display: block;
+  padding: 60px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  flex-wrap: nowrap;
 }
 .service-left {
   width: calc(50% - 10px);
@@ -544,10 +609,45 @@ html.active {
   background: url("../images/main_service_img3.jpg") no-repeat center;
   background-size: cover;
 }
+.service-title {
+  width: 100%;
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 39px;
+  margin-bottom: 3px;
+}
+.service-detail {
+  width: 100%;
+  font-size: 17px;
+  opacity: 0.8;
+  font-weight: 300;
+}
+.service-br {
+  display: none;
+}
+.service-btn {
+  padding: 0 15px 0 20px;
+  margin-top: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 140px;
+  height: 40px;
+  font-size: 15px;
+  transition: color 0.3s;
+  background-color: 0.3s;
+}
 
 @media screen and (max-width: 1440px) {
   .service-content {
     height: 47.22vw;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .service-content a {
+    padding: 30px;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -588,6 +688,15 @@ html.active {
   .service-link3 {
     height: 220px;
   }
+  .service-content a {
+    justify-content: center;
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .service-br {
+    display: block;
+  }
 }
 
 /* 정보 */
@@ -603,21 +712,51 @@ html.active {
   justify-content: space-between;
   width: 100%;
   height: 430px;
-  background-color: palevioletred;
 }
 .info-left {
-  width: calc(50% - 10px);
+  width: 50%;
   height: 100%;
-  background-color: yellow;
+  font-size: 44px;
+  line-height: 1.35;
+  font-weight: bold;
+}
+.info-color {
+  color: #3a68b2;
+  font-weight: bold;
 }
 .info-right {
-  width: calc(50% - 10px);
+  width: 50%;
   height: 100%;
-  background-color: yellowgreen;
 }
+.info-right-title {
+  margin-bottom: 45px;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+.info-right-detail-text {
+  margin-bottom: 25px;
+}
+.info-right-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 140px;
+  height: 50px;
+  padding: 0 10px;
+  margin-top: 90px;
+  font-size: 15px;
+  font-weight: 600;
+  border-bottom: 2px solid #222;
+}
+
 @media (max-width: 1280px) {
   .info-contents {
     height: 383px;
+  }
+  .info-right-title {
+    font-size: 30px;
   }
 }
 @media (max-width: 1024px) {
@@ -629,9 +768,33 @@ html.active {
   .info-left {
     width: 100%;
     margin-bottom: 40px;
+    text-align: center;
+    font-size: 34px;
   }
   .info-right {
     width: 100%;
+    text-align: center;
+  }
+
+  .info-right-link {
+    margin: 50px auto 0;
+  }
+}
+@media (max-width: 640px) {
+  .info-left {
+    font-size: 30px;
+  }
+  .info-right-title {
+    font-size: 22px;
+  }
+}
+@media (max-width: 480px) {
+  .info-left {
+    margin-bottom: 30px;
+    font-size: 26px;
+  }
+  .info-right-title {
+    font-size: 20px;
   }
 }
 /* 서비스 카테고리 */
@@ -646,20 +809,97 @@ html.active {
 .category-link {
   position: relative;
   display: block;
-  background-color: yellowgreen;
   width: 100%;
+  min-width: 400px;
+  padding: 85px 60px;
+  border-right: 1px solid #dadfe6;
+  background-color: #eee;
   height: 100%;
+  transition: background-color 0.3s, color 0.3s;
 }
-.clink1 {
-  background-color: violet;
+.category-link h6 {
+  margin-bottom: 14px;
+  font-size: 28px;
 }
-.clink2 {
-  background-color: turquoise;
+.category-link p {
+  position: relative;
+  margin-bottom: 42px;
+  font-size: 17px;
+  opacity: 0.8;
+  z-index: 1;
 }
-.clink3 {
-  background-color: blue;
+.category-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  border-bottom: 2px solid #222;
+  letter-spacing: -1px;
+  transition: border 0.3s;
 }
-@media (max-width: 480px) {
+.category-btn::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  right: 0px;
+  bottom: 10px;
+  max-width: 304px;
+}
+.clink1 .category-btn::after {
+  background: url("/images/main_banner_figure1.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: contain;
+}
+.clink2 .category-btn::after {
+  background: url("/images/main_banner_figure2.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: contain;
+}
+.clink3 .category-btn::after {
+  background: url("/images/main_banner_figure3.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: contain;
+}
+
+@media (max-width: 1600px) {
+  .category-link {
+    padding: 30px;
+  }
+}
+@media (max-width: 1280px) {
+  .category-link h6 {
+    font-size: 24px;
+  }
+  .category-link p {
+    font-size: 16px;
+  }
+  .category-btn::after {
+    width: 70%;
+    right: 0;
+  }
+}
+@media (max-width: 640px) {
+  .category-link h6 {
+    font-size: 20px;
+  }
+  .category-link p {
+    font-size: 15px;
+  }
+  .category-btn::after {
+    right: 20px !important;
+    width: 50%;
+    opacity: 0.8;
+  }
+}
+@media (max-width: 460px) {
   .category {
     height: 300px;
   }
@@ -688,10 +928,64 @@ html.active {
 .footer {
   position: relative;
   display: block;
-  padding: 40px 0;
+  padding: 60px;
   text-align: center;
   background-color: #222;
   color: #666;
-  height: 250px;
   width: 100%;
+}
+.footer-box {
+  width: 100%;
+  max-width: 1460px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+.footer-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 10px;
+  line-height: 1.7;
+}
+.footer-list-item {
+  position: relative;
+  padding: 0 18px;
+  font-size: 15px;
+}
+.footer-list-item:not(:last-child)::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 1px;
+  height: 12px;
+  background-color: #444;
+  transform: translateY(-50%);
+}
+.footer-tel {
+  color: #666;
+}
+.footer-copy {
+  margin-top: 50px;
+  font-size: 14px;
+  color: #444;
+}
+@media (max-width: 1280px) {
+  .footer-list {
+    justify-content: center;
+  }
+}
+@media (max-width: 1024px) {
+  .footer {
+    padding: 40px 0;
+  }
+}
+@media (max-width: 640px) {
+  .footer-list {
+    flex-direction: column;
+  }
+  .footer-list-item:not(:last-child)::after {
+    display: none;
+  }
 }

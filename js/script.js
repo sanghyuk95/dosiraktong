@@ -6,10 +6,10 @@ window.onload = function () {
   //waypoint
   let goTop = document.querySelector(".gotop");
   let service = document.querySelector(".service");
+  let footer = document.querySelector(".footer");
   new Waypoint({
     element: service,
     handler: (dir) => {
-      console.log(dir);
       if (dir === "down") {
         goTop.classList.add("active");
       } else {
@@ -18,6 +18,25 @@ window.onload = function () {
     },
     // 해당div가 화면상에 얼마나 보이는가
     offset: "50%",
+  });
+
+  new Waypoint({
+    element: footer,
+    handler: (dir) => {
+      if (dir === "down") {
+        goTop.classList.add("active2");
+      } else {
+        goTop.classList.remove("active2");
+      }
+    },
+    offset: "90%",
+  });
+
+  goTop.addEventListener("click", () => {
+    window.scroll({
+      top: 0,
+      behavior: "smooth",
+    });
   });
 
   let htmlTag = document.querySelector("html");
@@ -169,9 +188,9 @@ window.onload = function () {
   let swVisual = new Swiper(".swvisual", {
     effect: "fade",
     loop: true,
-    spped: 1000,
+    spped: 5000,
     autoplay: {
-      delay: 2000,
+      delay: 3000,
       disableOnInteraction: false,
     },
     navigation: {
