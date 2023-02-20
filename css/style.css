@@ -596,18 +596,28 @@ html.active {
 }
 .service-link1 {
   background: url("../images/main_service_img1.jpg") no-repeat center;
-  background-size: cover;
+  background-size: 110%;
   height: 100%;
+  transition: background-size 0.8s;
+}
+.service-link1:hover {
+  background-size: 120%;
 }
 .service-link2 {
   height: 100%;
   background: url("../images/main_service_img2.jpg") no-repeat center;
-  background-size: cover;
+  background-size: 110%;
+}
+.service-link2:hover {
+  background-size: 120%;
 }
 .service-link3 {
   height: 100%;
   background: url("../images/main_service_img3.jpg") no-repeat center;
-  background-size: cover;
+  background-size: 110%;
+}
+.service-link3:hover {
+  background-size: 120%;
 }
 .service-title {
   width: 100%;
@@ -856,17 +866,38 @@ html.active {
   background-position: bottom right;
   background-size: contain;
 }
+.clink1:hover {
+  background-color: #3891b2;
+  color: white;
+}
+.clink1:hover .category-btn {
+  border-bottom: 2px solid #fff;
+}
 .clink2 .category-btn::after {
   background: url("/images/main_banner_figure2.png");
   background-repeat: no-repeat;
   background-position: bottom right;
   background-size: contain;
 }
+.clink2:hover {
+  background-color: #db574f;
+  color: white;
+}
+.clink2:hover .category-btn {
+  border-bottom: 2px solid #fff;
+}
 .clink3 .category-btn::after {
   background: url("/images/main_banner_figure3.png");
   background-repeat: no-repeat;
   background-position: bottom right;
   background-size: contain;
+}
+.clink3:hover {
+  background-color: #f0b23a;
+  color: white;
+}
+.clink3:hover .category-btn {
+  border-bottom: 2px solid #fff;
 }
 
 @media (max-width: 1600px) {
