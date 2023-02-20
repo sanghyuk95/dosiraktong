@@ -861,7 +861,7 @@ html.active {
   max-width: 304px;
 }
 .clink1 .category-btn::after {
-  background: url("/images/main_banner_figure1.png");
+  background: url("../images/main_banner_figure1.png");
   background-repeat: no-repeat;
   background-position: bottom right;
   background-size: contain;
@@ -874,7 +874,7 @@ html.active {
   border-bottom: 2px solid #fff;
 }
 .clink2 .category-btn::after {
-  background: url("/images/main_banner_figure2.png");
+  background: url("../images/main_banner_figure2.png");
   background-repeat: no-repeat;
   background-position: bottom right;
   background-size: contain;
@@ -887,7 +887,7 @@ html.active {
   border-bottom: 2px solid #fff;
 }
 .clink3 .category-btn::after {
-  background: url("/images/main_banner_figure3.png");
+  background: url("../images/main_banner_figure3.png");
   background-repeat: no-repeat;
   background-position: bottom right;
   background-size: contain;
