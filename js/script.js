@@ -54,7 +54,7 @@ window.onload = function () {
     mbBt.classList.toggle("active");
     mbNav.classList.toggle("active");
     mbBtSpan.forEach((item) => {
-      item.classList.toggle("active");
+      item.classList.toggle("active", header.classList.contains("active") || mbBt.classList.contains("active"));
     });
   });
   // 화면 리사이징 처리
@@ -160,20 +160,12 @@ window.onload = function () {
   const showVT = (data) => {
     swTitle.innerHTML = data.title;
     swTxt.innerHTML = data.txt;
-    if (data.link === "no") {
-      swLink.classList.add("active");
-    } else {
-      swLink.classList.remove("active");
-    }
+    swLink.classList.toggle("active", data.link === "no");
   };
   // 포커스라인 애니메이션
   const changeBar = (index) => {
     swList.forEach((item, idx) => {
-      if (idx === index) {
-        item.classList.add("active");
-      } else {
-        item.classList.remove("active");
-      }
+      item.classList.toggle("active", idx === index);
     });
   };
 
